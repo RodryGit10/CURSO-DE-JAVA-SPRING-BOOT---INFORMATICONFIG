@@ -10,17 +10,46 @@
 <body>
     <h1>Informacion de Empleado</h1>
     <ul>
-        <li><strong>Nombre:</strong> <span th:text="${ Empleado.nombre}"></span></li>
-        <li><strong>Apellido:</strong> <span th:text="${Empleado.apellido}"></span></li>
+        <li><strong>Nombre:</strong> <span th:text="${ Empleado1.nombre}"></span></li>
+        <li><strong>Apellido:</strong> <span th:text="${Empleado1.apellido}"></span></li>
         <li>
             <strong>Direccion:</strong> 
-            <span th:text="${Empleado.direccion !=null ? Empleado.direccion : 'No tiene Direccion'}"></span>
+            <span th:text="${Empleado1.direccion !=null ? Empleado1.direccion : 'No tiene Direccion'}"></span>
         </li>
-        <li><strong>Puesto:</strong> <span th:text="${Empleado.puesto}"></span></li>
-        <li><strong>Edad:</strong> <span th:text="${ Empleado.edad}"></span></li>
-        <li><strong>Telefono:</strong> <span th:text="${Empleado.telefono}"></span></li>
-        <li><strong>ID:</strong> <span th:text="${Empleado.id}"></span></li>
+        <li><strong>Puesto:</strong> <span th:text="${Empleado1.puesto}"></span></li>
+        <li><strong>Edad:</strong> <span th:text="${ Empleado1.edad}"></span></li>
+        <li><strong>Telefono:</strong> <span th:text="${Empleado1.telefono}"></span></li>
+        <li><strong>ID:</strong> <span th:text="${Empleado1.id}"></span></li>
     </ul>
+
+
+    <h1>Lista de Empleados</h1>
+    <table border="1">
+        <thead>
+            <tr>
+                <th>Nombre</th>
+                <th>Apellido</th>
+                <th>Dirección</th>
+                <th>Puesto</th>
+                <th>Edad</th>
+                <th>Teléfono</th>
+                <th>Departamento</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr th:each="Emplea : ${Empleados2}">
+                <td th:text="${Emplea.nombre}"></td>
+                <td th:text="${Emplea.apellido}"></td>
+                <td th:text="${Emplea.direccion}"></td>
+                <td th:text="${Emplea.puesto}"></td>
+                <td th:text="${Emplea.edad}"></td>
+                <td th:text="${Emplea.telefono}"></td>
+                <td th:text="${Emplea.id}"></td>
+            </tr>
+        </tbody>
+    </table>
+
+
 </body>
 
 </html>
